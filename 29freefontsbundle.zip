@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+body {
+font-size: 1rem;
+line-height: 2rem;
+width:70%;
+max-width:800px;
+margin:auto;
+}
+
+html {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.logo, .titlebox {
+	height:100%;
+  background-repeat:no-repeat;
+  position: relative;
+}
+
+.logo {
+	background-image: url("https://dl.dropboxusercontent.com/u/109941573/ng-mad-libs-logo.png");
+  width: 20%;
+  height:100%;
+  background-size:contain;
+  display:inline-block;
+  position:relative;
+  float:left;
+  border-right:1px solid black;
+}
+
+.titlebox {
+  width: 79%;
+  margin:0;
+  height:100%;
+  display:inline-block;
+  position:relative;
+  float:right;
+  text-align:center;
+}
+
+.madLibs{
+	height:50%;
+	background-size:contain;
+	background-image: url("https://dl.dropboxusercontent.com/u/109941573/ng-mad-libs-text.png");
+  display:block; 
+  position:relative;
+  float:top;
+  background-position:center;
+  width:100%;
+  background-repeat:no-repeat;
+
+.titleAuto {
+	display:block;
+	height:45%;
+	font-size:2rem;
+	position:relative;
+	float:bottom;
+	width:100%;
+}
+
+.topbar {
+ width:100%;
+height: 25vh;
+ position: relative;
+ display:inline-block;
+ border:1px solid black;
+ margin:0;
+}
+
+.container {
+	border:1px solid black;
+}
+
+.wordbox {
+display:inline-block;
+width: 200px;
+border-bottom: solid black 1px;
+height:1.5rem;
+text-align: center;
+}
+
+.inputs {
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+border-bottom:1px solid black;
+margin:0;
+padding:0;
+}
+
+.inputBox{
+flex: 1 1 auto;
+width: 20vw;
+text-align: center;
+margin-bottom:5%;
+line-height:2em;
+}
+
+.wordInput {
+
+}
+
+.paragraph {
+	line-height:2rem;
+	padding:5%;
+}
+
+.directions {
+	width:100%;
+	height:20vh;
+	font-size:1.5rem;
+	padding-left:5%;
+	margin-top:10vh;
+}

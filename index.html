@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="">
+<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<div class="topbar">
+  <div class="logo">
+  </div> 
+  <div class="titlebox">
+    <div class="madLibs"></div>
+    <div class="titleAuto">Automate This!</div>
+  </div>
+</div> 
+<div class="container" >
+<div class="inputs">
+<div class="directions">Please Provide the Following Words:</div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="lighting_object"  ng-init="lighting_object='Object'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape" id="landscape" ng-init="landscape='Place'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" ng-init="descriptive_noun='descriptive noun'" /></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="superlative" ng-init="superlative='superlative'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape_item" ng-init="landscape_item='Outdoor Object'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="other_adjective" /ng-init="other_adjective='Adjective'"></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="time_of_day" ng-init="time_of_day='Time'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="otherLightingObject"ng-init="otherLightingObject='Object'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="adverb" ng-init="adverb='Adverb'"/></div>
+   <div class="inputBox"><input type="text" class="wordInput" ng-model="adjective3" ng-init="adjective3='Adjective'"/></div>
+	<div class="inputBox"><input type="text" class="wordInput" ng-model="adjective4" ng-init="adjective4='Adjective'"/></div>
+</div>  <!-- inputs -->
+
+<div class="paragraph">
+<p>The <span class="wordbox" id="lightingshow">{{ lighting_object }} </span> was shining on the <span class="wordbox">{{ landscape }}</span>, shining with all its <span class="wordbox">{{ descriptive_noun }}</span>,</p>
+
+<p>doing its very <span class="wordbox">{{ superlative }}</span> to make the <span class="wordbox">{{ landscape_item }}</span> smooth and <span class="wordbox">{{ other_adjective }}</span></p>
+
+<p>and this was odd, because it was the middle of the <span class="wordbox">{{ time_of_day }}</span></p>
+
+<br>
+
+
+The <span class="wordbox">{{ otherLightingObject }}</span> was shining <span class="wordbox">{{ adverb }}</span> because she thought the <span class="wordbox">{{ lighting_object }}</span>
+<p>had no business being there after the <span class="wordbox">{{ time_of_day }}</span> was done;</p>
+<p>It's very <span class="wordbox">{{ adjective3 }}</span> of him, she thought, to come and spoil the <span class="wordbox">{{ adjective4 }}</span>!</p>
+</div>
+</div>  <!-- container -->
+
+
+
+
+</body>
+
+</html>
