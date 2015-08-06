@@ -5,7 +5,9 @@
 <meta charset="UTF-8" />
 <title>Document</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+<script src="https://code.angularjs.org/1.3.0/angular-messages.min.js"></script>
 <script src="app.js"></script>
 </head>
 
@@ -19,6 +21,7 @@
   </div>
 </div> 
 <div class="container" >
+<form name="wordIn" novalidate ng-submit="submit()" class="wordIn">
   <div class="radios">
   <div class="announce">Choose your Pronouns!</div>
     <div class="moon">
@@ -36,64 +39,66 @@
   </div>
 <div class="inputs">
 <div class="directions">Please Provide the Following Words:</div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="lighting_object"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" /></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="superlative"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape_item" /></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="other_adjective" /></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="time_of_day" ng-init="time_of_day='Time'"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="otherLightingObject"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="adverb" ng-init="adverb='Adverb'"/></div>
-   <div class="inputBox"><input type="text" class="wordInput" ng-model="adjective3" ng-init="adjective3='Adjective'"/></div>
-	<div class="inputBox"><input type="text" class="wordInput" ng-model="adjective4" ng-init="adjective4='Adjective'"/></div>
-</div>  <!-- inputs -->
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="lighting_object" required placeholder="Object"/></div>
+     <div class="inputBox"><input type="text" required class="wordInput" ng-model="landscape"/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="superlative" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape_item" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="other_adjective" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="time_of_day" ng-init="time_of_day='Time'" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="otherLightingObject" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="adverb" ng-init="adverb='Adverb'" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="adjective3" ng-init="adjective3='Adjective'" required/></div>
+  	<div class="inputBox"><input type="text" class="wordInput" ng-model="adjective4" ng-init="adjective4='Adjective'" required/></div>
+</div>
+  <input type="submit">
+</form>  <!-- inputs -->
 
 <div class="paragraph">
-<p>The <span class="wordbox" id="lightingshow">{{lighting_object}}</span> was shining on the <span class="wordbox">{{ landscape }}</span>, shining with all 
-<span ng-switch="Sun">
-  <span ng-switch-when="He">his</span>
-  <span ng-switch-when="She">her,</span>
-  <span ng-switch-when="They">their</span> <span class="wordbox">{{descriptive_noun}}</span>,
-</span></p>
+  <p>The <span class="wordbox" id="lightingshow">{{lighting_object}}</span> was shining on the <span class="wordbox">{{ landscape }}</span>, shining with all 
+    <span ng-switch="Sun">
+      <span ng-switch-when="He">his</span>
+      <span ng-switch-when="She">her,</span>
+      <span ng-switch-when="They">their</span> <span class="wordbox">{{descriptive_noun}}</span>,
+    </span></p>
 
-<p>doing 
-  <span ng-switch="Sun">
-    <span ng-switch-when="He">his</span>
-    <span ng-switch-when="She">her</span>
-    <span ng-switch-when="They">their</span>
-  </span> 
-  very <span class="wordbox">{{ superlative }}</span> to make the <span class="wordbox">{{ landscape_item }}</span> smooth and <span class="wordbox">{{ other_adjective }}</span></p>
+  <p>doing 
+    <span ng-switch="Sun">
+      <span ng-switch-when="He">his</span>
+      <span ng-switch-when="She">her</span>
+      <span ng-switch-when="They">their</span>
+    </span> 
+    very <span class="wordbox">{{ superlative }}</span> to make the <span class="wordbox">{{ landscape_item }}</span> smooth and <span class="wordbox">{{ other_adjective }}</span></p>
 
-<p>and this was odd, because it was the middle of the <span class="wordbox">{{ time_of_day }}</span></p>
+  <p>and this was odd, because it was the middle of the <span class="wordbox">{{ time_of_day }}</span></p>
 
-<br>
+  <br>
 
 
-<p>The 
-<span class="wordbox">{{ otherLightingObject }}</span> was shining 
-<span class="wordbox">{{ adverb }}</span> because 
-<span ng-switch="Moon">
-  <span ng-switch-when="She">she</span>
-  <span ng-switch-when="He">he</span>
-  <span ng-switch-when="They">they</span>
-</span> 
-thought the <span class="wordbox">{{ lighting_object }}</span></p>
+  <p>The 
+  <span class="wordbox">{{ otherLightingObject }}</span> was shining 
+  <span class="wordbox">{{ adverb }}</span> because 
+    <span ng-switch="Moon">
+      <span ng-switch-when="She">she</span>
+      <span ng-switch-when="He">he</span>
+      <span ng-switch-when="They">they</span>
+    </span> 
+  thought the <span class="wordbox">{{ lighting_object }}</span></p>
 
-<p>had no business being there after the <span class="wordbox">{{ time_of_day }}</span> was done;</p>
+  <p>had no business being there after the <span class="wordbox">{{ time_of_day }}</span> was done;</p>
 
-<p>It's very <span class="wordbox">{{ adjective3 }}</span> of 
-<span ng-switch="Sun">
-  <span ng-switch-when="He">him,</span>
-  <span ng-switch-when="She">her,</span>
-  <span ng-switch-when="They">them,</span>
-</span>
-<span ng-switch="Moon">
-  <span ng-switch-when="She"> she</span>
-  <span ng-switch-when="He"> he</span>
-  <span ng-switch-when="They"> they</span> 
-</span>
-  thought, to come and spoil the <span class="wordbox">{{ adjective4 }}</span>!</p>
+  <p>It's very <span class="wordbox">{{ adjective3 }}</span> of 
+    <span ng-switch="Sun">
+      <span ng-switch-when="He">him,</span>
+      <span ng-switch-when="She">her,</span>
+      <span ng-switch-when="They">them,</span>
+    </span>
+    <span ng-switch="Moon">
+      <span ng-switch-when="She"> she</span>
+      <span ng-switch-when="He"> he</span>
+      <span ng-switch-when="They"> they</span> 
+    </span>
+    thought, to come and spoil the <span class="wordbox">{{ adjective4 }}</span>!</p>
 </div>
 </div>  <!-- container -->
 

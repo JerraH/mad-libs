@@ -1,4 +1,4 @@
-var madLibs = angular.module('madLibs', []);
+var madLibs = angular.module('madLibs', ['ngMessages']);
 
 madLibs.controller('myController', ['$scope', function($scope) {
 	$scope.lighting_object = 'Object';
@@ -14,5 +14,17 @@ madLibs.controller('myController', ['$scope', function($scope) {
 	$scope.adjective4 = 'Adjective';
 	$scope.Moon = 'She';
 	$scope.Sun = 'He';
+
+	$scope.submit = function(){
+
+	if($scope.wordIn.$valid) {
+		$('.wordIn').hide();
+		$('.paragraph').show();
+	}
+	else {
+		alert('You must fill out all the form pieces!')
+	}
+	};
 }
+
 ]);
