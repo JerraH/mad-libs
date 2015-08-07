@@ -40,18 +40,18 @@
 <div class="inputs">
 <div class="directions">Please Provide the Following Words:</div>
      <div class="inputBox"><input type="text" class="wordInput" ng-model="lighting_object" required placeholder="Object"/></div>
-     <div class="inputBox"><input type="text" required class="wordInput" ng-model="landscape"/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="superlative" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape_item" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="other_adjective" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="time_of_day" ng-init="time_of_day='Time'" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="otherLightingObject" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="adverb" ng-init="adverb='Adverb'" required/></div>
-     <div class="inputBox"><input type="text" class="wordInput" ng-model="adjective3" ng-init="adjective3='Adjective'" required/></div>
-  	<div class="inputBox"><input type="text" class="wordInput" ng-model="adjective4" ng-init="adjective4='Adjective'" required/></div>
+     <div class="inputBox"><input type="text" required class="wordInput" ng-model="landscape" placeholder="Place" /></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" placeholder="Character Trait (noun)" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="superlative" placeholder="Adjective" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="landscape_item" placeholder="Object" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="other_adjective" placeholder="Adjective" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="time_of_day" placeholder="Time" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="otherLightingObject" placeholder="Object" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="adverb" placeholder="Adverb" required/></div>
+     <div class="inputBox"><input type="text" class="wordInput" ng-model="adjective3"  placeholder="Adjective" required/></div>
+  	<div class="inputBox"><input type="text" class="wordInput" ng-model="adjective4"  placeholder="Adjective" required/></div>
+    <div class="buttonhold"><input type="submit" class="button"></div>
 </div>
-  <input type="submit">
 </form>  <!-- inputs -->
 
 <div class="paragraph">
@@ -99,6 +99,7 @@
       <span ng-switch-when="They"> they</span> 
     </span>
     thought, to come and spoil the <span class="wordbox">{{ adjective4 }}</span>!</p>
+   <div class="buttonhold"><button class="button" ng-click="reset()">Reset</button></div>
 </div>
 </div>  <!-- container -->
 

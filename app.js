@@ -1,17 +1,17 @@
 var madLibs = angular.module('madLibs', ['ngMessages']);
 
 madLibs.controller('myController', ['$scope', function($scope) {
-	$scope.lighting_object = 'Object';
-	$scope.landscape = 'Place';
-	$scope.descriptive_noun = 'Character Trait';
-	$scope.superlative = 'Adjective';
-	$scope.landscape_item = 'Object';
-	$scope.other_adjective = 'Adjective';
-	$scope.time_of_day = 'Time';
-	$scope.otherLightingObject = 'Object';
-	$scope.adjective3 = 'Adjective';
-	$scope.adverb = 'Adverb';
-	$scope.adjective4 = 'Adjective';
+	$scope.lighting_object = '';
+	$scope.landscape = '';
+	$scope.descriptive_noun = '';
+	$scope.superlative = '';
+	$scope.landscape_item = '';
+	$scope.other_adjective = '';
+	$scope.time_of_day = '';
+	$scope.otherLightingObject = '';
+	$scope.adjective3 = '';
+	$scope.adverb = '';
+	$scope.adjective4 = '';
 	$scope.Moon = 'She';
 	$scope.Sun = 'He';
 
@@ -25,6 +25,23 @@ madLibs.controller('myController', ['$scope', function($scope) {
 		alert('You must fill out all the form pieces!')
 	}
 	};
-}
 
+	$scope.reset = function(){
+		$scope.lighting_object = '';
+		$scope.landscape = '';
+		$scope.descriptive_noun = '';
+		$scope.superlative = '';
+		$scope.landscape_item = '';
+		$scope.other_adjective = '';
+		$scope.time_of_day = '';
+		$scope.otherLightingObject = '';
+		$scope.adjective3 = '';
+		$scope.adverb = '';
+		$scope.adjective4 = '';
+		$scope.Moon = 'She';
+		$scope.Sun = 'He';
+		$('.wordIn').show();
+		$('.paragraph').hide();
+	};
+}
 ]);
