@@ -1,4 +1,4 @@
-var madLibs = angular.module('madLibs', ['ngMessages']);
+var madLibs = angular.module('madLibs', ['ngAnimate']);
 
 madLibs.controller('myController', ['$scope', function($scope) {
 	$scope.lighting_object = '';
@@ -15,16 +15,16 @@ madLibs.controller('myController', ['$scope', function($scope) {
 	$scope.Moon = 'She';
 	$scope.Sun = 'He';
 
-	$scope.submit = function(){
+	// $scope.submit = function(){
 
-	if($scope.wordIn.$valid) {
-		$('.wordIn').hide();
-		$('.paragraph').show();
-	}
-	else {
-		alert('You must fill out all the form pieces!')
-	}
-	};
+	// if($scope.wordIn.$valid) {
+	// 	$('.wordIn').hide();
+	// 	$('.paragraph').show();
+	// }
+	// else {
+	// 	alert('You must fill out all the form pieces!')
+	// }
+	// };
 
 	$scope.reset = function(){
 		$scope.lighting_object = '';
@@ -42,6 +42,12 @@ madLibs.controller('myController', ['$scope', function($scope) {
 		$scope.Sun = 'He';
 		$('.wordIn').show();
 		$('.paragraph').hide();
+		$scope.wordIn.$submitted = false;
 	};
+
+	$scope.applyRed = function(e) {
+	$(e.target).closest('span').css({class: 'red'});
+};
 }
+
 ]);
