@@ -21,8 +21,9 @@
   </div>
 </div> 
 <div class="container">
-  <div class="radios" ng-hide="wordIn.$submitted && wordIn.$valid">
+  <div class="radios {{ inShow }}">
     <div class="announce">Choose your Pronouns!</div>
+
     <div class="moon">
     Moon Prounouns:
       <form>
@@ -31,6 +32,7 @@
         <span><input type="radio" class="pronounChoice" name="moon" ng-click="Moon = 'They'" class="pronounChoice">They</span><br>
       </form>
     </div> <!-- moon -->
+
     <div class="sun">
     Sun Pronouns:
       <form>
@@ -40,47 +42,49 @@
       </form>
     </div> <!-- sun -->
   </div> <!-- radios -->
-  <form name="wordIn" novalidate ng-submit="submit()" class="wordIn" ng-hide="wordIn.$submitted && wordIn.$valid">
-    <div class="inputs">
+
+
+  <form name="wordIn" novalidate ng-submit="submit()" class="wordIn" >
+    <div class="inputs {{ inShow }}">
       <div class="directions">Please Provide the Following Words:</div>
-      <div class="inputBox">
-        <input type="text" class="wordInput" ng-model="lighting_object" required placeholder="Object"/>
-      </div>
-      <div class="inputBox">
-        <input type="text" required class="wordInput" ng-model="landscape" placeholder="Place" />
-      </div>
-      <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" placeholder="Character Trait (noun)" required/></div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="superlative" placeholder="Adjective" required/>
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="landscape_item" placeholder="Object" required/>
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="other_adjective" placeholder="Adjective" required/>
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="time_of_day" placeholder="Time" required/>
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="otherLightingObject" placeholder="Object" required/>
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="adverb" placeholder="Adverb" required />
-      </div>
-      <div class="inputBox">
-          <input type="text" class="wordInput" ng-model="adjective3"  placeholder="Adjective" required/>
-      </div>
-    	<div class="inputBox">
-          <input type="text" class="wordInput" ng-model="adjective4"  placeholder="Adjective" required/>
-      </div>
-      <br>
-      <div class="warning" ng-show="wordIn.$submitted && wordIn.$invalid">You must fill out all words before continuing!</div><br>
-      <div class="buttonhold"><input type="submit" class="button" name="Generate My Mad-lib"></div>
+        <div class="inputBox">
+          <input type="text" class="wordInput" ng-model="lighting_object" required placeholder="Object"/>
+        </div>
+        <div class="inputBox">
+          <input type="text" required class="wordInput" ng-model="landscape" placeholder="Place" />
+        </div>
+        <div class="inputBox"><input type="text" class="wordInput" ng-model="descriptive_noun" placeholder="Character Trait (noun)" required/></div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="superlative" placeholder="Adjective" required/>
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="landscape_item" placeholder="Object" required/>
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="other_adjective" placeholder="Adjective" required/>
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="time_of_day" placeholder="Time" required/>
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="otherLightingObject" placeholder="Object" required/>
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="adverb" placeholder="Adverb" required />
+        </div>
+        <div class="inputBox">
+            <input type="text" class="wordInput" ng-model="adjective3"  placeholder="Adjective" required/>
+        </div>
+      	<div class="inputBox">
+            <input type="text" class="wordInput" ng-model="adjective4"  placeholder="Adjective" required/>
+        </div>
+        <br>
+        <div class="warning">You must fill out all words before continuing!</div><br>
+        <div class="buttonhold"><input type="submit" class="button" name="Generate My Mad-lib"></div>
     </div> <!-- inputs -->
   </form>  <!-- wordIN -->
 
-<div class="paragraph" ng-show="wordIn.$submitted && wordIn.$valid">
+<div class="paragraph {{ parShow }}">
   <p>The <span class="wordbox" id="lightingshow">{{lighting_object}}</span> was shining on the <span class="wordbox">{{ landscape }}</span>, shining with all 
     <span ng-switch="Sun">
       <span ng-switch-when="He">his</span>

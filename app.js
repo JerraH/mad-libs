@@ -1,6 +1,6 @@
 var madLibs = angular.module('madLibs', ['ngAnimate']);
 
-madLibs.controller('myController', ['$scope', function($scope) {
+madLibs.controller('myController', ['$scope', function($scope, $timeout) {
 	$scope.lighting_object = '';
 	$scope.landscape = '';
 	$scope.descriptive_noun = '';
@@ -15,16 +15,26 @@ madLibs.controller('myController', ['$scope', function($scope) {
 	$scope.Moon = 'She';
 	$scope.Sun = 'He';
 
-	// $scope.submit = function(){
+	$scope.parShow = 'hide';
+	$scope.inShow = 'show';
 
-	// if($scope.wordIn.$valid) {
-	// 	$('.wordIn').hide();
-	// 	$('.paragraph').show();
-	// }
-	// else {
-	// 	alert('You must fill out all the form pieces!')
-	// }
-	// };
+	$scope.hideAn = function() {
+		$scope.inShow = 'hide';
+	};
+
+												// submit
+
+	$scope.submit = function(){
+	  if($scope.wordIn.$valid) {
+		  $scope.inShow = 'disappeared';
+		  $scope.parShow = 'appeared';
+	  }
+	  else {
+		  $('.warning').show();
+	  }
+	};
+
+												// Reset
 
 	$scope.reset = function(){
 		$scope.lighting_object = '';
@@ -40,8 +50,8 @@ madLibs.controller('myController', ['$scope', function($scope) {
 		$scope.adjective4 = '';
 		$scope.Moon = 'She';
 		$scope.Sun = 'He';
-		$('.wordIn').show();
-		$('.paragraph').hide();
+		$scope.parShow = 'disappeared';
+		$scope.inShow = 'appeared';
 		$scope.wordIn.$submitted = false;
 	};
 

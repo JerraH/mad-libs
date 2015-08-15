@@ -14,6 +14,18 @@ html {
 box-sizing: border-box;
 }
 
+
+.topbar {
+ width:100%;
+height: 25vh;
+ position: relative;
+ display:inline-block;
+ border:1px solid black;
+ margin:0;
+ display:flex;
+ flex-direction:row;
+}
+
 .logo, .titlebox {
 	height:100%;
   background-repeat:no-repeat;
@@ -55,6 +67,7 @@ box-sizing: border-box;
   width:100%;
   background-repeat:no-repeat;
 }
+
 .titleAuto {
 	display:block;
 	height:45%;
@@ -64,16 +77,6 @@ box-sizing: border-box;
 	width:100%;
 }
 
-.topbar {
- width:100%;
-height: 25vh;
- position: relative;
- display:inline-block;
- border:1px solid black;
- margin:0;
- display:flex;
- flex-direction:row;
-}
 
 .container {
 	border:1px solid black;
@@ -94,6 +97,7 @@ flex-wrap: wrap;
 border-bottom:1px solid black;
 margin:0;
 padding:0;
+overflow:hidden;
 }
 
 .inputBox{
@@ -111,7 +115,9 @@ height:2vh;
 
 .paragraph {
 	line-height:2rem;
-	padding:5%;
+	padding-left:5%;
+  padding-right:5%;
+  overflow: hidden;
 }
 
 .directions {
@@ -137,6 +143,7 @@ height:2vh;
   display:flex;
   justify-content:center;
   flex-flow: row wrap;
+  overflow:hidden;
 }
 
 .announce {
@@ -169,41 +176,6 @@ height:2vh;
   height:2rem;
 }
 
-.red {
-  -webkit-animation: red 1s ease-in-out;
-  -moz-animation:red 1s ease-in-out;
-  -o-animation: red 1s ease-in-out;
-  animation: red 1s ease-in-out;
-}
-
-@-webkit-keyframes red {
-  from{color: 'black';}
-  50% {color: 'red';}
-  to {color: 'black';}
-}
-
-@-moz-keyframes red {
-  from{color: 'black';}
-  50% {color: 'red';}
-  to {color:'black';}
-}
-
-@-o-keyframes red {
-  from{color: black;}
-  50% {color: red;}
-  to {color:black;}
-}
-
-@keyframes red {
-  from{color: 'black';}
-  50% {color: 'red';}
-  to {color:'black';}
-}
-
-.red-add {
-  
-}
-
 .warning {
   color:red;
   display:block;
@@ -211,68 +183,42 @@ height:2vh;
   width:100%;
   text-align: center;
   margin-bottom:1rem;
+  display: none;
 }
 
-
-.paragraph.ng-hide-remove {
-  max-height:0;
-  -webkit-transition:5s;
-  transition:5s;
+.disappeared {
+  animation: shrink 3s linear 0;
+  @-webkit-animation: shrink 3s linear 0;
 }
 
-
-.paragraph.ng-hide-remove.ng-hide-remove-active, .paragraph.ng-hide-add  {
-  -webkit-transition:5s;
-  transition:5s;
-  max-height:80vh;
+.appeared {
+  animation: grow 5s linear 2s;
+  @-webkit-animation: grow 5s linear 2s;
 }
 
-.paragraph.ng-hide-add.ng-hide-add-active {
-  -webkit-transition:5s;
-  max-height: 0;
-}
-
-.radios.ng-hide-remove {
-  max-height:0;
-}
-
-
-.radios.ng-hide-remove.ng-hide-remove-active, .radios.ng-hide-add  {
-  -webkit-transition:5s;
-  max-height:80vh;
-}
-
-.radios.ng-hide-add.ng-hide-add-active {
-  -webkit-transition:5s;
-  max-height: 0;
-}
-
-.inputs.ng-hide-remove {
-  max-height:0;
-}
-
-
-.inputs.ng-hide-remove.ng-hide-remove-active, .inputs.ng-hide-add  {
-  -webkit-transition:5s;
-  max-height:80vh;
-}
-
-.inputs.ng-hide-add.ng-hide-add-active {
-  -webkit-transition:5s;
-  max-height: 0;
-}
-
-@keyframes grow {
-  from {max-height:0;}
-  to {max-height: 80vh;}
+.hide {
+  visibility:hidden;
+  ;
 }
 
 @-webkit-keyframes grow {
-  0% {max-height:0;}
-  100% {max-height: 80vh;}
+  from {height:0%; padding-top: 0; padding-bottom:0; visibility:hidden; height:0;}
+  to {height:80%; padding-top:5%; padding-bottom:5%;}
+
+}
+
+@keyframes grow {
+  from {height:0%; padding-top:0; padding-bottom:0;}
+  to {height:80%; padding-top:5%; padding-bottom:5%;}
+}
+
+@-webkit-keyframes shrink {
+  from {visibility:visible;}
+  to {height:0; padding-top: 0; padding-bottom:0; visibility:hidden;}
+
 }
 
 @keyframes shrink {
-  from {max-height: 80vh;}
-  to {max-height: 0vh;}
+  from {visibility:visible;}
+ to {height:0; padding-top: 0; padding-bottom:0; visibility: hidden;}
 }
